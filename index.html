@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mylan Investigates provides digital investigation, digital evidence documentation, data recovery assistance, and professional reporting services.">
+<meta name="theme-color" content="#030811">
+<title>Mylan Investigates | Digital Evidence. Real Answers.</title>
+<style>
+    /* =========================================
+       GLOBAL STYLES
+    ========================================= */
+    :root {
+        --background: #030811;
+        --background-light: #07111d;
+        --card: #091521;
+        --blue: #087ff0;
+        --blue-bright: #008cff;
+        --white: #ffffff;
+        --text: #aab7c3;
+        --muted: #8292a1;
+        --border: #1a344b;
+        --gold: #ffc107;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px;
+    }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--background);
+        color: var(--white);
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+    img {
+        display: block;
+        max-width: 100%;
+    }
+    a {
+        -webkit-tap-highlight-color: transparent;
+    }
+    button,
+    input,
+    textarea {
+        font: inherit;
+    }
+    section {
+        padding: 85px 7%;
+        scroll-margin-top: 80px;
+    }
+    .section-label {
+        color: var(--blue-bright);
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 3px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .section-title {
+        color: var(--white);
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.2;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+    .section-description {
+        max-width: 720px;
+        margin: 0 auto 42px;
+        text-align: center;
+        color: var(--text);
+    }
+    /* =========================================
+       NAVIGATION
+    ========================================= */
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+        min-height: 76px;
+        padding: 14px 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        background: rgba(3, 8, 17, 0.97);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(14px);
+    }
+    .nav-logo {
+        flex-shrink: 0;
+        color: var(--white);
+        font-size: 1.12rem;
+        font-weight: 900;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+    }
+    .nav-logo span {
+        color: var(--blue-bright);
+    }
+    .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 19px;
+    }
+    .nav-links a {
+        color: #d9e2ea;
+        text-decoration: none;
+        font-size: 0.77rem;
+        font-weight: 800;
+        white-space: nowrap;
+        transition: color 0.25s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+        color: var(--blue-bright);
+    }
+    .nav-links .nav-contact {
+        padding: 9px 13px;
+        border: 1px solid var(--blue);
+        border-radius: 6px;
+    }
+    .menu-toggle {
+        display: none;
+        min-width: 44px;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        background: #0a1725;
+        border: 1px solid var(--border);
+        border-radius: 7px;
+        cursor: pointer;
+        font-size: 1.55rem;
+    }
+    /* =========================================
+       BUTTONS
+    ========================================= */
+    .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 13px;
+    }
+    .btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 47px;
+        padding: 12px 19px;
+        border-radius: 7px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 0.88rem;
+        font-weight: 800;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: background 0.25s ease,
+                    border-color 0.25s ease,
+                    transform 0.25s ease;
+    }
+    .btn-primary {
+        color: var(--white);
+        background: var(--blue);
+        box-shadow: 0 0 22px rgba(0, 127, 240, 0.18);
+    }
+    .btn-primary:hover {
+        background: #1595ff;
+        transform: translateY(-2px);
+    }
+    .btn-outline {
+        color: var(--white);
+        background: rgba(0, 140, 255, 0.06);
+        border-color: var(--blue);
+    }
+    .btn-outline:hover {
+        background: rgba(0, 140, 255, 0.16);
+        transform: translateY(-2px);
+    }
+    /* =========================================
+       HERO
+    ========================================= */
+    .hero {
+        min-height: 640px;
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        align-items: center;
+        gap: 45px;
+        padding: 75px 7%;
+        background:
+            radial-gradient(
+                circle at 78% 45%,
+                rgba(0, 110, 220, 0.16),
+                transparent 38%
+            ),
+            linear-gradient(
+                135deg,
+                #02060c,
+                #07111d,
+                #02060c
+            );
+        border-bottom: 1px solid #122c42;
+    }
+    .hero-content {
+        max-width: 680px;
+    }
+    .hero-label {
+        color: var(--blue-bright);
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 3px;
+        margin-bottom: 18px;
+    }
+    .hero h1 {
+        color: var(--white);
+        font-size: clamp(2.8rem, 5.5vw, 5rem);
+        line-height: 1.04;
+        margin-bottom: 22px;
+    }
+    .hero h1 span {
+        color: var(--blue-bright);
+        text-shadow: 0 0 25px rgba(0, 140, 255, 0.3);
+    }
+    .hero-text {
+        color: var(--text);
+        font-size: 1.08rem;
+        max-width: 600px;
+        margin-bottom: 28px;
+    }
+    .hero-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .hero-image img {
+        width: 100%;
+        max-width: 650px;
+        min-height: 250px;
+        object-fit: cover;
+        border: 1px solid rgba(0, 140, 255, 0.25);
+        border-radius: 16px;
+        box-shadow: 0 0 55px rgba(0, 119, 255, 0.15);
+    }
+    /* =========================================
+       TRUST BAR
+    ========================================= */
+    .trust-bar {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+        padding: 30px 7%;
+        background: #050b13;
+        border-bottom: 1px solid #12283b;
+    }
+    .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .trust-icon {
+        color: var(--blue-bright);
+        font-size: 1.8rem;
+    }
+    .trust-item h3 {
+        font-size: 0.98rem;
+        margin-bottom: 2px;
+    }
+    .trust-item p {
+        color: var(--muted);
+        font-size: 0.84rem;
+    }
+    /* =========================================
+       SERVICES
+    ========================================= */
+    #services {
+        background:
+            radial-gradient(
+                circle at 50% 0%,
+                rgba(0, 90, 180, 0.08),
+                transparent 45%
+            );
+    }
+    .services-grid {
+        max-width: 1350px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 17px;
+    }
+    .service-card {
+        padding: 27px 19px;
+        background: linear-gradient(145deg, #0a1622, #050b12);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        text-align: center;
+        transition: transform 0.25s ease,
+                    border-color 0.25s ease;
+    }
+    .service-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--blue);
+    }
+    .service-icon {
+        color: var(--blue-bright);
+        font-size: 2.2rem;
+        margin-bottom: 12px;
+    }
+    .service-card h3 {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 12px;
+    }
+    .service-card p {
+        color: var(--muted);
+        font-size: 0.86rem;
+    }
+    /* =========================================
+       ABOUT
+    ========================================= */
+    #about {
+        background: #050a11;
+    }
+    .about-container {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .about-container p {
+        color: var(--text);
+        margin-bottom: 18px;
+    }
+    /* =========================================
+       REVIEWS
+    ========================================= */
+    #reviews {
+        background: linear-gradient(180deg, #030811, #07111b);
+    }
+    .reviews-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+    .review-card {
+        display: flex;
+        flex-direction: column;
+        padding: 26px;
+        background: #09131e;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        transition: border-color 0.25s ease,
+                    transform 0.25s ease;
+    }
+    .review-card:hover {
+        border-color: var(--blue);
+        transform: translateY(-3px);
+    }
+    /* Gold star ratings */
+    .stars {
+        color: var(--gold);
+        letter-spacing: 3px;
+        font-size: 1.2rem;
+        margin-bottom: 13px;
+    }
+    .review-text {
+        flex-grow: 1;
+        color: #c1ccd5;
+        font-style: italic;
+        margin-bottom: 18px;
+        overflow-wrap: anywhere;
+    }
+    .review-author {
+        color: var(--white);
+        font-size: 0.9rem;
+        font-weight: 800;
+    }
+    /* =========================================
+       REVIEW FORM
+    ========================================= */
+    .review-form-container {
+        max-width: 720px;
+        margin: 55px auto 0;
+        padding: 30px;
+        background: #08111a;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+    }
+    .review-form-container h3 {
+        margin-bottom: 8px;
+        font-size: 1.35rem;
+    }
+    .review-form-container > p {
+        color: var(--muted);
+        margin-bottom: 23px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        display: block;
+        color: #dce4ea;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 13px;
+        color: var(--white);
+        background: #03080d;
+        border: 1px solid #233b4f;
+        border-radius: 7px;
+        outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: var(--blue);
+    }
+    .form-group textarea {
+        min-height: 125px;
+        resize: vertical;
+    }
+    .rating-input {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        gap: 5px;
+    }
+    .rating-input input {
+        position: absolute;
+        opacity: 0;
+        width: 1px;
+        height: 1px;
+    }
+    .rating-input label {
+        color: #5b6470;
+        font-size: 2rem;
+        cursor: pointer;
+        margin: 0;
+        transition: color 0.15s ease;
+    }
+    .rating-input label:hover,
+    .rating-input label:hover ~ label,
+    .rating-input input:checked ~ label {
+        color: var(--gold);
+    }
+    .rating-input input:focus-visible + label {
+        outline: 2px solid var(--blue);
+        outline-offset: 3px;
+    }
+    .form-note {
+        color: var(--muted);
+        font-size: 0.83rem;
+        margin-top: 13px;
+    }
+    /* =========================================
+       FAQ ACCORDION
+    ========================================= */
+    #faqs {
+        background: #050a11;
+    }
+    .faq-container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    .faq-item {
+        margin-bottom: 12px;
+        overflow: hidden;
+        background: #09131e;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        transition: border-color 0.25s ease;
+    }
+    .faq-item:hover,
+    .faq-item.active {
+        border-color: var(--blue);
+    }
+    .faq-question {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        width: 100%;
+        padding: 19px 21px;
+        color: var(--white);
+        background: transparent;
+        border: 0;
+        text-align: left;
+        font-weight: 800;
+        cursor: pointer;
+    }
+    .faq-question:focus-visible {
+        outline: 2px solid var(--blue-bright);
+        outline-offset: -3px;
+    }
+    .faq-icon {
+        flex-shrink: 0;
+        color: var(--blue-bright);
+        font-size: 1.5rem;
+        line-height: 1;
+        transition: transform 0.25s ease;
+    }
+    .faq-answer {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s ease;
+    }
+    .faq-answer-inner {
+        overflow: hidden;
+        padding: 0 21px;
+        color: var(--text);
+    }
+    .faq-item.active .faq-answer {
+        grid-template-rows: 1fr;
+    }
+    .faq-item.active .faq-answer-inner {
+        padding-bottom: 19px;
+    }
+    .faq-item.active .faq-icon {
+        transform: rotate(45deg);
+    }
+    /* =========================================
+       CONTACT
+    ========================================= */
+    #contact {
+        text-align: center;
+        background:
+            radial-gradient(
+                circle at center,
+                rgba(0, 100, 200, 0.12),
+                transparent 58%
+            );
+    }
+    .contact-box {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    .contact-box > p {
+        max-width: 720px;
+        margin: 0 auto 28px;
+        color: var(--text);
+    }
+    .contact-buttons {
+        justify-content: center;
+    }
+    /* =========================================
+       SOCIAL MEDIA
+    ========================================= */
+    #social {
+        padding-top: 50px;
+        padding-bottom: 70px;
+        text-align: center;
+    }
+    .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+    .social-links a {
+        padding: 11px 19px;
+        color: #dce5ec;
+        background: #09131d;
+        border: 1px solid var(--border);
+        border-radius: 7px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: border-color 0.25s ease,
+                    transform 0.25s ease;
+    }
+    .social-links a:hover {
+        border-color: var(--blue);
+        transform: translateY(-2px);
+    }
+    /* =========================================
+       FOOTER
+    ========================================= */
+    footer {
+        padding: 40px 20px;
+        text-align: center;
+        background: #02050a;
+        border-top: 1px solid #14293a;
+    }
+    footer h2 {
+        margin-bottom: 8px;
+        font-size: 1.4rem;
+    }
+    footer p {
+        color: var(--muted);
+        margin: 7px 0;
+        overflow-wrap: anywhere;
+    }
+    footer a {
+        color: var(--blue-bright);
+        text-decoration: none;
+    }
+    footer a:hover {
+        text-decoration: underline;
+    }
+    .footer-copy {
+        margin-top: 22px;
+        font-size: 0.82rem;
+    }
+    /* =========================================
+       TABLET
+    ========================================= */
+    @media (max-width: 1150px) {
+        .navbar {
+            padding-left: 3%;
+            padding-right: 3%;
+        }
+        .nav-links {
+            gap: 12px;
+        }
+        .nav-links a {
+            font-size: 0.7rem;
+        }
+        .services-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+    /* =========================================
+       MOBILE NAVIGATION
+    ========================================= */
+    @media (max-width: 900px) {
+        html {
+            scroll-padding-top: 82px;
+        }
+        .navbar {
+            min-height: 70px;
+            padding: 12px 18px;
+        }
+        .menu-toggle {
+            display: inline-flex;
+        }
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            width: 100%;
+            max-height: calc(100vh - 70px);
+            overflow-y: auto;
+            padding: 12px 18px 20px;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0;
+            background: #030811;
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.35);
+        }
+        .nav-links.open {
+            display: flex;
+        }
+        .nav-links a {
+            display: block;
+            width: 100%;
+            padding: 13px 12px;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(26, 52, 75, 0.55);
+        }
+        .nav-links .nav-contact {
+            margin-top: 12px;
+            text-align: center;
+            border: 1px solid var(--blue);
+        }
+        .hero {
+            min-height: auto;
+            grid-template-columns: 1fr;
+            gap: 35px;
+            padding: 60px 6%;
+            text-align: center;
+        }
+        .hero-content {
+            margin: 0 auto;
+        }
+        .hero-text {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero .button-row {
+            justify-content: center;
+        }
+        .hero-image img {
+            max-width: 620px;
+        }
+        .trust-bar {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 28px 7%;
+        }
+        .services-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+    /* =========================================
+       SMALL MOBILE
+    ========================================= */
+    @media (max-width: 600px) {
+        section {
+            padding: 62px 18px;
+        }
+        .hero {
+            padding: 52px 18px;
+        }
+        .hero h1 {
+            font-size: clamp(2.45rem, 11vw, 3.5rem);
+        }
+        .hero-label {
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+        }
+        .hero-text {
+            font-size: 0.98rem;
+        }
+        .hero .button-row {
+            flex-direction: column;
+        }
+        .hero .btn,
+        .contact-buttons .btn {
+            width: 100%;
+        }
+        .services-grid,
+        .reviews-grid {
+            grid-template-columns: 1fr;
+        }
+        .review-card {
+            padding: 22px;
+        }
+        .review-form-container {
+            padding: 22px 18px;
+        }
+        .faq-question {
+            padding: 17px 15px;
+            font-size: 0.92rem;
+        }
+        .faq-answer-inner {
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 0.92rem;
+        }
+        .faq-item.active .faq-answer-inner {
+            padding-bottom: 16px;
+        }
+        .contact-buttons,
+        .social-links {
+            flex-direction: column;
+        }
+        .social-links a {
+            width: 100%;
+        }
+        .nav-logo {
+            font-size: 0.98rem;
+        }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+            transition-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+        }
+    }
+</style>
+</head>
+<body>
+<!-- =========================================
+     NAVIGATION
+========================================= -->
+<nav class="navbar" aria-label="Main navigation">
+    <a class="nav-logo" href="#home">
+        MYLAN <span>INVESTIGATES</span>
+    </a>
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="navLinks"
+        aria-expanded="false"
+    >
+        <span id="menuIcon" aria-hidden="true">☰</span>
+    </button>
+    <div class="nav-links" id="navLinks">
+        <a href="#home">HOME</a>
+        <a href="#services">SERVICES</a>
+        <a href="#about">ABOUT</a>
+        <a href="#reviews">REVIEWS</a>
+        <a href="#faqs">FAQS</a>
+        <a href="#contact">CONTACT</a>
+        <a
+            href="https://wa.me/15815994159"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-contact"
+        >
+            CONTACT US
+        </a>
+    </div>
+</nav>
+<!-- =========================================
+     HERO
+========================================= -->
+<header class="hero" id="home">
+    <div class="hero-content">
+        <div class="hero-label">
+            DIGITAL INVESTIGATION &amp; EVIDENCE
+        </div>
+        <h1>
+            DIGITAL EVIDENCE.
+            <br>
+            <span>REAL ANSWERS.</span>
+        </h1>
+        <p class="hero-text">
+            Professional digital investigation and evidence
+            documentation services designed to help you
+            understand the facts, organize information,
+            and move forward with clarity.
+        </p>
+        <div class="button-row">
+            <a
+                href="https://wa.me/15815994159"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+            >
+                MESSAGE US ON WHATSAPP
+            </a>
+            <a
+                href="https://t.me/mylanprobe"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-outline"
+            >
+                MESSAGE US ON TELEGRAM
+            </a>
+            <a
+                href="mailto:mylantech6@gmail.com?subject=Inquiry%20for%20Mylan%20Investigates"
+                class="btn btn-outline"
+            >
+                SEND US AN EMAIL
+            </a>
+        </div>
+    </div>
+    <div class="hero-image">
+        <img
+            src="mylan-hero.png"
+            alt="Mylan Investigates digital investigation branding"
+        >
+    </div>
+</header>
+<!-- =========================================
+     TRUST BAR
+========================================= -->
+<div class="trust-bar">
+    <div class="trust-item">
+        <div class="trust-icon" aria-hidden="true">◈</div>
+        <div>
+            <h3>CONFIDENTIALITY</h3>
+            <p>Your privacy matters.</p>
+        </div>
+    </div>
+    <div class="trust-item">
+        <div class="trust-icon" aria-hidden="true">▣</div>
+        <div>
+            <h3>DETAILED REPORTS</h3>
+            <p>Clear and organized findings.</p>
+        </div>
+    </div>
+    <div class="trust-item">
+        <div class="trust-icon" aria-hidden="true">◷</div>
+        <div>
+            <h3>RESPONSIVE SUPPORT</h3>
+            <p>Clear communication throughout.</p>
+        </div>
+    </div>
+</div>
+<!-- =========================================
+     SERVICES
+========================================= -->
+<section id="services">
+    <div class="section-label">OUR SERVICES</div>
+    <h2 class="section-title">
+        Professional Investigations. Clearer Answers.
+    </h2>
+    <p class="section-description">
+        Digital information review, evidence documentation,
+        and organized reporting for personal, business,
+        and legal situations.
+    </p>
+    <div class="services-grid">
+        <article class="service-card">
+            <div class="service-icon" aria-hidden="true">◉</div>
+            <h3>Digital Forensics</h3>
+            <p>
+                Review and documentation of relevant digital
+                information from files, devices, applications,
+                and online platforms where lawfully accessible.
+            </p>
+        </article>
+        <article class="service-card">
+            <div class="service-icon" aria-hidden="true">◎</div>
+            <h3>Infidelity Investigations</h3>
+            <p>
+                Discreet review and documentation of relevant
+                information relating to suspected relationship
+                misconduct.
+            </p>
+        </article>
+        <article class="service-card">
+            <div class="service-icon" aria-hidden="true">▱</div>
+            <h3>Data Recovery Assistance</h3>
+            <p>
+                Assistance with locating and organizing
+                relevant lost, deleted, or existing digital
+                information when recovery is possible.
+            </p>
+        </article>
+        <article class="service-card">
+            <div class="service-icon" aria-hidden="true">◇</div>
+            <h3>Fraud Investigations</h3>
+            <p>
+                Review and documentation of information
+                relating to suspected fraud, scams,
+                or financial irregularities.
+            </p>
+        </article>
+        <article class="service-card">
+            <div class="service-icon" aria-hidden="true">⚖</div>
+            <h3>Legal Documentation</h3>
+            <p>
+                Organized digital findings and documentation
+                that may assist clients and their legal
+                representatives.
+            </p>
+        </article>
+    </div>
+</section>
+<!-- =========================================
+     ABOUT
+========================================= -->
+<section id="about">
+    <div class="section-label">ABOUT MYLAN INVESTIGATES</div>
+    <h2 class="section-title">
+        Clarity When the Details Matter.
+    </h2>
+    <div class="about-container">
+        <p>
+            Mylan Investigates provides digital investigation
+            and evidence documentation services with an emphasis
+            on discretion, organization, and attention to detail.
+        </p>
+        <p>
+            We understand that situations involving relationships,
+            fraud, business disputes, or legal matters can create
+            uncertainty. Our aim is to help clients organize
+            relevant information so the available facts are easier
+            to understand.
+        </p>
+        <p>
+            Every situation is different. We communicate clearly
+            about the scope of a request, the information that can
+            lawfully be reviewed, and the limitations of the work.
+        </p>
+    </div>
+</section>
+<!-- =========================================
+     CLIENT REVIEWS
+========================================= -->
+<section id="reviews">
+    <div class="section-label">CLIENT REVIEWS &amp; RECOMMENDATIONS</div>
+    <h2 class="section-title">
+        Experiences Shared by Clients
+    </h2>
+    <p class="section-description">
+        Read the experiences and recommendations shared by
+        people who have used the service. Testimonials should
+        be published only with the reviewers' permission.
+    </p>
+    <div class="reviews-grid">
+        <!-- REVIEW 1 -->
+        <article class="review-card">
+            <div class="stars" aria-label="5 out of 5 stars">
+                ★★★★★
+            </div>
+            <p class="review-text">
+                "I was going through a difficult divorce and felt
+                completely lost. Mylan helped me organize years of
+                scattered messages, emails, and financial records
+                into a clear timeline. What seemed impossible became
+                understandable. He was discreet, professional, and
+                never made me feel judged. I finally had clarity —
+                and my attorney said the organized evidence made all
+                the difference. I sincerely can't recommend Mylan
+                Probe enough for the help he provided."
+            </p>
+            <p class="review-author">
+                Jennifer M. — Austin, Texas, USA
+            </p>
+        </article>
+        <!-- REVIEW 2 -->
+        <article class="review-card">
+            <div class="stars" aria-label="5 out of 5 stars">
+                ★★★★★
+            </div>
+            <p class="review-text">
+                "After months of suspicion and confusion, I contacted
+                Mylan for help reviewing digital evidence I was
+                legally entitled to access. He was patient, thorough,
+                and incredibly respectful of my privacy. Within days,
+                I had a clear picture of what was really going on.
+                No drama, no pressure — just facts. If you're in a
+                situation where you need answers, this is the person
+                to call."
+            </p>
+            <p class="review-author">
+                David R. — Manchester, United Kingdom
+            </p>
+        </article>
+        <!-- REVIEW 3 -->
+        <article class="review-card">
+            <div class="stars" aria-label="5 out of 5 stars">
+                ★★★★★
+            </div>
+            <p class="review-text">
+                "As a mother going through a custody dispute, I needed
+                help documenting communication patterns and dates
+                that I could present clearly. Mylan organized
+                everything into a professional, easy-to-follow
+                format. He understood the emotional weight of my
+                situation and handled everything with care. I felt
+                supported, not alone. Highly recommended for anyone
+                facing family court matters."
+            </p>
+            <p class="review-author">
+                Sarah T. — Sydney, Australia
+            </p>
+        </article>
+        <!-- REVIEW 4 -->
+        <article class="review-card">
+            <div class="stars" aria-label="5 out of 5 stars">
+                ★★★★★
+            </div>
+            <p class="review-text">
+                "I suspected financial irregularities during my
+                separation but didn't know where to start. Mylan
+                reviewed the records I provided and helped me
+                identify inconsistencies I had completely
+                overlooked. His attention to detail is remarkable,
+                and he explained everything in plain language.
+                Worth every penny — and then some."
+            </p>
+            <p class="review-author">
+                Michael B. — Toronto, Canada
+            </p>
+        </article>
+        <!-- REVIEW 5 -->
+        <article class="review-card">
+            <div class="stars" aria-label="5 out of 5 stars">
+                ★★★★★
+            </div>
+            <p class="review-text">
+                "After discovering suspicious activity on shared
+                accounts, I felt overwhelmed and didn't know who
+                to trust. Mylan was calm, professional, and focused
+                only on what could be legally documented. He gave
+                me the clarity I needed to make informed decisions.
+                I'm grateful for his discretion and his kindness
+                throughout the process."
+            </p>
+            <p class="review-author">
+                Emma L. — Auckland, New Zealand
+            </p>
+        </article>
+        <!-- REVIEW 6 -->
+        <article class="review-card">
+            <div class="stars" aria-label="5 out of 5 stars">
+                ★★★★★
+            </div>
+            <p class="review-text">
+                "Mylan helped me piece together a timeline from
+                messages, emails, and call logs that I was authorized
+                to provide. What felt like chaos became a clear,
+                organized picture. He's not just technically skilled
+                — he genuinely cares about helping people find the
+                truth. I've already recommended him to two friends."
+            </p>
+            <p class="review-author">
+                Robert K. — Los Angeles, California, USA
+            </p>
+        </article>
+        <!-- REVIEW 7 -->
+        <article class="review-card">
+            <div class="stars" aria-label="5 out of 5 stars">
+                ★★★★★
+            </div>
+            <p class="review-text">
+                "I was hesitant to reach out at first, but Mylan
+                made the entire process comfortable and confidential.
+                He never pushed, never judged, and always explained
+                what he could and couldn't do. The final report was
+                clear, professional, and exactly what I needed.
+                Mylan Probe is the real deal — discreet, ethical,
+                and effective."
+            </p>
+            <p class="review-author">
+                Olivia P. — London, United Kingdom
+            </p>
+        </article>
+    </div>
+    <!-- REVIEW SUBMISSION FORM -->
+    <div class="review-form-container">
+        <h3>Share Your Experience</h3>
+        <p>
+            If you've worked with Mylan Investigates, you can
+            prepare a review using the form below.
+        </p>
+        <form id="reviewForm">
+            <div class="form-group">
+                <label for="reviewName">Your Name</label>
+                <input
+                    type="text"
+                    id="reviewName"
+                    name="reviewName"
+                    placeholder="Enter your name"
+                    maxlength="100"
+                    autocomplete="name"
+                    required
+                >
+            </div>
+            <div class="form-group">
+                <label>Your Rating</label>
+                <div class="rating-input">
+                    <input
+                        type="radio"
+                        id="rating5"
+                        name="rating"
+                        value="5"
+                        required
+                    >
+                    <label for="rating5" aria-label="5 stars">★</label>
+                    <input
+                        type="radio"
+                        id="rating4"
+                        name="rating"
+                        value="4"
+                    >
+                    <label for="rating4" aria-label="4 stars">★</label>
+                    <input
+                        type="radio"
+                        id="rating3"
+                        name="rating"
+                        value="3"
+                    >
+                    <label for="rating3" aria-label="3 stars">★</label>
+                    <input
+                        type="radio"
+                        id="rating2"
+                        name="rating"
+                        value="2"
+                    >
+                    <label for="rating2" aria-label="2 stars">★</label>
+                    <input
+                        type="radio"
+                        id="rating1"
+                        name="rating"
+                        value="1"
+                    >
+                    <label for="rating1" aria-label="1 star">★</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="reviewMessage">Your Review</label>
+                <textarea
+                    id="reviewMessage"
+                    name="reviewMessage"
+                    placeholder="Share your genuine experience..."
+                    maxlength="3000"
+                    required
+                ></textarea>
+            </div>
+            <button
+                type="submit"
+                class="btn btn-primary"
+            >
+                PREPARE MY REVIEW
+            </button>
+            <p class="form-note">
+                This form prepares a review for you to send by email.
+                It does not publish reviews automatically.
+            </p>
+        </form>
+    </div>
+</section>
+<!-- =========================================
+     FREQUENTLY ASKED QUESTIONS
+========================================= -->
+<section id="faqs">
+    <div class="section-label">
+        FREQUENTLY ASKED QUESTIONS
+    </div>
+    <h2 class="section-title">
+        Questions? We've Got Answers.
+    </h2>
+    <p class="section-description">
+        Learn more about our services, the process,
+        privacy, and getting started.
+    </p>
+    <div class="faq-container">
+        <div class="faq-item">
+            <button
+                class="faq-question"
+                type="button"
+                aria-expanded="false"
+            >
+                <span>What services does Mylan Investigates provide?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+                <div class="faq-answer-inner">
+                    We provide digital investigation and evidence
+                    documentation services, including digital
+                    forensics, infidelity-related inquiries, data
+                    recovery assistance, fraud-related documentation,
+                    and organized reporting.
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button
+                class="faq-question"
+                type="button"
+                aria-expanded="false"
+            >
+                <span>How does a digital investigation work?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+                <div class="faq-answer-inner">
+                    We first discuss your situation and the information
+                    you need help organizing. Depending on the scope
+                    and lawful access, relevant information can then
+                    be reviewed and documented in a clear format.
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button
+                class="faq-question"
+                type="button"
+                aria-expanded="false"
+            >
+                <span>Is my information kept confidential?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+                <div class="faq-answer-inner">
+                    Discretion and careful handling of client
+                    information are important. Please share only
+                    information you are authorized to provide.
+                    Confidentiality arrangements and any applicable
+                    limitations can be discussed before work begins.
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button
+                class="faq-question"
+                type="button"
+                aria-expanded="false"
+            >
+                <span>What kinds of digital information can be reviewed?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+                <div class="faq-answer-inner">
+                    Depending on the situation and lawful access,
+                    relevant material may include documents, files,
+                    messages, emails, account records, call logs,
+                    and other digital information.
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button
+                class="faq-question"
+                type="button"
+                aria-expanded="false"
+            >
+                <span>How long does an investigation take?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+                <div class="faq-answer-inner">
+                    Timing depends on the scope of the request, the
+                    amount of information involved, and the complexity
+                    of the work. A reasonable timeframe can be discussed
+                    after we understand your needs.
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button
+                class="faq-question"
+                type="button"
+                aria-expanded="false"
+            >
+                <span>Can you help with suspected infidelity?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+                <div class="faq-answer-inner">
+                    We can discuss lawful review and documentation
+                    of relevant information relating to suspected
+                    relationship misconduct. The available options
+                    depend on the facts and the information you are
+                    legally entitled to access.
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button
+                class="faq-question"
+                type="button"
+                aria-expanded="false"
+            >
+                <span>Can documented information be used in court?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+                <div class="faq-answer-inner">
+                    Organized documentation may help you discuss
+                    relevant information with a lawyer. Whether
+                    particular material is admissible depends on
+                    the circumstances and applicable law. Consult
+                    a qualified attorney about your specific case.
+                </div>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button
+                class="faq-question"
+                type="button"
+                aria-expanded="false"
+            >
+                <span>How do I get started?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+                <div class="faq-answer-inner">
+                    Contact us through WhatsApp, Telegram, or email.
+                    Briefly explain what you need help with and
+                    provide only information you are authorized
+                    to share. We can then discuss the next steps.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =========================================
+     CONTACT
+========================================= -->
+<section id="contact">
+    <div class="contact-box">
+        <div class="section-label">GET IN TOUCH</div>
+        <h2 class="section-title">
+            Let's Talk About Your Needs.
+        </h2>
+        <p>
+            Have questions or need assistance organizing digital
+            information? Contact Mylan Investigates through
+            WhatsApp, Telegram, or email. We aim to keep
+            communication straightforward and discreet.
+        </p>
+        <div class="button-row contact-buttons">
+            <a
+                href="https://wa.me/15815994159"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+            >
+                WHATSAPP: +1 581-599-4159
+            </a>
+            <a
+                href="https://t.me/mylanprobe"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-outline"
+            >
+                TELEGRAM: @mylanprobe
+            </a>
+            <a
+                href="mailto:mylantech6@gmail.com?subject=Inquiry%20for%20Mylan%20Investigates"
+                class="btn btn-outline"
+            >
+                SEND AN EMAIL
+            </a>
+        </div>
+    </div>
+</section>
+<!-- =========================================
+     SOCIAL MEDIA
+========================================= -->
+<section id="social">
+    <div class="section-label">CONNECT WITH US</div>
+    <h2 class="section-title">
+        Follow Mylan Investigates
+    </h2>
+    <div class="social-links">
+        <a
+            href="https://www.facebook.com/share/1C1GrpmNYs/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Facebook
+        </a>
+        <a
+            href="https://www.threads.com/@milanpro89?igshid=NTc4MTIwNjQ2YQ=="
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Threads — @milanpro89
+        </a>
+        <a
+            href="https://www.threads.com/@mylan_investigates01?igshid=NTc4MTIwNjQ2YQ=="
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Threads — @mylan_investigates01
+        </a>
+        <a
+            href="https://t.me/mylanprobe"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Telegram — @mylanprobe
+        </a>
+    </div>
+</section>
+<!-- =========================================
+     FOOTER
+========================================= -->
+<footer>
+    <h2>
+        MYLAN <span style="color:#008cff;">INVESTIGATES</span>
+    </h2>
+    <p>
+        Professional Digital Investigation &amp;
+        Evidence Documentation Services
+    </p>
+    <p>
+        Email:
+        <a href="mailto:mylantech6@gmail.com">
+            mylantech6@gmail.com
+        </a>
+    </p>
+    <p>
+        WhatsApp:
+        <a
+            href="https://wa.me/15815994159"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            +1 581-599-4159
+        </a>
+    </p>
+    <p>
+        Telegram:
+        <a
+            href="https://t.me/mylanprobe"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            @mylanprobe
+        </a>
+    </p>
+    <p>
+        Signal: +1 618-522-3436
+    </p>
+    <p class="footer-copy">
+        &copy; <span id="currentYear">2026</span>
+        Mylan Investigates. All Rights Reserved.
+    </p>
+</footer>
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+<script>
+    /* =========================================
+       MOBILE NAVIGATION
+    ========================================= */
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    const menuIcon = document.getElementById("menuIcon");
+    function closeMenu() {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuIcon.textContent = "☰";
+    }
+    menuToggle.addEventListener("click", function () {
+        const isOpen = navLinks.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+        menuIcon.textContent = isOpen ? "×" : "☰";
+    });
+    navLinks.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            closeMenu();
+        });
+    });
+    document.addEventListener("click", function (event) {
+        const clickedInsideMenu = navLinks.contains(event.target);
+        const clickedToggle = menuToggle.contains(event.target);
+        if (!clickedInsideMenu && !clickedToggle) {
+            closeMenu();
+        }
+    });
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            closeMenu();
+            menuToggle.focus();
+        }
+    });
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 900) {
+            closeMenu();
+        }
+    });
+    /* =========================================
+       FAQ ACCORDION
+    ========================================= */
+    const faqQuestions = document.querySelectorAll(".faq-question");
+    faqQuestions.forEach(function (question, index) {
+        const answer = question.nextElementSibling;
+        const answerId = "faq-answer-" + (index + 1);
+        answer.id = answerId;
+        question.setAttribute("aria-controls", answerId);
+        question.addEventListener("click", function () {
+            const currentItem = question.closest(".faq-item");
+            const isCurrentlyOpen =
+                question.getAttribute("aria-expanded") === "true";
+            faqQuestions.forEach(function (otherQuestion) {
+                const otherItem = otherQuestion.closest(".faq-item");
+                const otherAnswer = otherQuestion.nextElementSibling;
+                otherQuestion.setAttribute("aria-expanded", "false");
+                otherItem.classList.remove("active");
+                otherAnswer.hidden = true;
+            });
+            if (!isCurrentlyOpen) {
+                question.setAttribute("aria-expanded", "true");
+                currentItem.classList.add("active");
+                answer.hidden = false;
+            }
+        });
+    });
+    /* =========================================
+       REVIEW FORM
+       Prepares an email; does not publish reviews.
+    ========================================= */
+    const reviewForm = document.getElementById("reviewForm");
+    reviewForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const name = document.getElementById("reviewName").value.trim();
+        const message = document.getElementById("reviewMessage").value.trim();
+        const rating = document.querySelector(
+            'input[name="rating"]:checked'
+        );
+        if (!name || !message || !rating) {
+            alert("Please enter your name, select a rating, and write your review.");
+            return;
+        }
+        const subject = encodeURIComponent(
+            "Client Review Submission — Mylan Investigates"
+        );
+        const body = encodeURIComponent(
+            "Name: " + name + "\n" +
+            "Rating: " + rating.value + " out of 5 stars\n\n" +
+            "Review:\n" + message
+        );
+        const emailLink =
+            "mailto:mylantech6@gmail.com?subject=" +
+            subject +
+            "&body=" +
+            body;
+        window.location.href = emailLink;
+    });
+    /* =========================================
+       AUTOMATIC COPYRIGHT YEAR
+    ========================================= */
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+</script>
+</body>
+</html>
